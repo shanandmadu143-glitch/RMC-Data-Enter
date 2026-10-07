@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Analyzer Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-radar"></i>
+                <h1>WebAnalyzer <span>Pro</span></h1>
+            </div>
+            <p>Modern Website Analysis Tool</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="input-group">
+                    <i class="fa-solid fa-globe input-icon"></i>
+                    <input type="url" id="urlInput" placeholder="https://example.com" required>
+                    <button id="analyzeBtn">
+                        <span>Analyze</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="error-msg" id="errorMsg">කරුණාකර නිවැරදි URL එකක් ඇතුලත් කරන්න.</div>
+            </div>
+
+            <div class="loading-state" id="loadingState">
+                <div class="spinner"></div>
+                <p>දත්ත විශ්ලේෂණය කරමින් පවතී...</p>
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <!-- Status Card -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>General Info</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="data-row">
+                            <span>Status:</span>
+                            <span class="badge success" id="resStatus">Active</span>
+                        </div>
+                        <div class="data-row">
+                            <span>Response Time:</span>
+                            <span id="resPing">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Links Card -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-video"></i>
+                        <h3>Media & Public Links</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="link-list" id="mediaLinks">
+                            <!-- Links will be injected here via JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
